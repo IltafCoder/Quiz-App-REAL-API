@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./main.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Prompt:wght@700&display=swap"
+        rel="stylesheet">
+    <title>Quiz App</title>
+</head>
+
+<body>
+    <div class="main">
+
+        <div class="quiz-start">
+            <h1>Quiz App</h1>
+            <p>This Quiz App contains multiple choice questions. It appears to have questions from different
+                categories.<br>
+                However, you can always specify one and the number of questions you want to take a quiz in.<br>Have fun!
+            </p>
+            <form>
+                <div>
+                    <label>Category&nbsp;&nbsp;</label>
+                    <select>
+                        <option value="9">General Knowledge</option>
+                        <option value="17">Science & Nature</option>
+                        <option value="18">Science: Computers</option>
+                        <option value="19">Science: Mathematics</option>
+                        <option value="21">Sports</option>
+                        <option value="22">Geography</option>
+                        <option value="23">History</option>
+                        <option value="24">Politics</option>
+                        <option value="25">Art</option>
+                        <option value="26">Celebrities</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Questions Count&nbsp;&nbsp;</label>
+                    <select>
+                        <option>10</option>
+                        <option>20</option>
+                        <option>30</option>
+                        <option>50</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Difficulty&nbsp;&nbsp;</label>
+                    <select>
+                        <option>Easy</option>
+                        <option>Medium</option>
+                        <option>Hard</option>
+                    </select>
+                </div>
+                <div id="begin-div">
+                    <input type="button" value="Begin Quiz!" onclick="startQuiz()">
+                    <span id="begin-btn-icon"><i class="fa fa-play"></i></span>
+                </div>
+
+            </form>
+            <button onclick="viewHistory('main-page')" id="view-history-btn"><i class="fa fa-clock"></i>&nbsp;&nbsp;View
+                History</button>
+        </div>
+
+        <div class="quiz-holder">
+            <p id="quiz-to-ans">Loading Quiz...</p>
+            <div>
+                <input type="radio" id="quiz-op-0" name="quiz-ans">
+                <label for="quiz-op-0"></label>
+
+                <input type="radio" id="quiz-op-1" name="quiz-ans">
+                <label for="quiz-op-1"></label>
+
+                <input type="radio" id="quiz-op-2" name="quiz-ans">
+                <label for="quiz-op-2"></label>
+
+                <input type="radio" id="quiz-op-3" name="quiz-ans">
+                <label for="quiz-op-3"></label>
+
+                <div class="loader-holder">
+                    <div class="loader">
+                        
+                    </div>
+                </div>
+
+                <div>
+                    <button onclick="nextQuestion()" id="next-btn">Next&nbsp;<i
+                            class="fa fa-chevron-right"></i></button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="quiz-res">
+            <h2>Your Results</h2>
+            <div>
+                <p>Total Marks: </p>
+                <p>100</p>
+            </div>
+            <div>
+                <p>Gained Marks: </p>
+                <p>p2</p>
+            </div>
+            <div>
+                <p>Grade: </p>
+                <p>p3</p>
+            </div>
+            <div>
+                <button onclick="location.reload()"><i class="fa fa-repeat"></i>&nbsp;&nbsp;Retry</button>
+                <button onclick="viewHistory()"><i class="fa fa-clock"></i>&nbsp;&nbsp;View History</button>
+            </div>
+        </div>
+
+        <div class="quiz-history">
+            <div class="table-holder">
+                <table>
+                    <tr>
+                        <th style="border-top-left-radius: 15px;">Serial No</th>
+                        <th>Category</th>
+                        <th>Questions Count</th>
+                        <th>Difficulty</th>
+                        <th>Score</th>
+                        <th>Grade</th>
+                        <th style="border-top-right-radius: 15px;">Date</th>
+                    </tr>
+                </table>
+            </div>
+
+            <div>
+                <button onclick="location.reload()"><i class="fa fa-repeat"></i>&nbsp;&nbsp;Try Again?</button>
+                <button onclick="clearScore()"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Clear Records</button>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
