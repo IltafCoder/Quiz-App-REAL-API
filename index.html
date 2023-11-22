@@ -24,8 +24,7 @@
         <div class="quiz-start">
             <h1>Quiz App</h1>
             <p>This Quiz App contains multiple choice questions. It appears to have questions from different
-                categories.<br>
-                However, you can always specify one and the number of questions you want to take a quiz in.<br>Have fun!
+                categories.<br> However, you can always specify one and the number of questions you want to take a quiz in.<br> Have fun!
             </p>
             <form>
                 <div>
@@ -61,44 +60,56 @@
                     </select>
                 </div>
                 <div id="begin-div">
-                    <input type="button" value="Begin Quiz!" onclick="startQuiz()">
+                    <input type="button" value="        Begin Quiz!" onclick="startQuiz()">
                     <span id="begin-btn-icon"><i class="fa fa-play"></i></span>
                 </div>
 
             </form>
-            <button onclick="viewHistory('main-page')" id="view-history-btn"><i class="fa fa-clock"></i>&nbsp;&nbsp;View
-                History</button>
+            <span>
+                <button onclick="viewHistory('main-page')" id="view-history-btn"><i
+                        class="fa fa-clock"></i>&nbsp;&nbsp;View
+                    History</button>
+            </span>
+
         </div>
 
-        <div class="quiz-holder">
-            <p id="quiz-to-ans">Loading Quiz...</p>
-            <div>
-                <input type="radio" id="quiz-op-0" name="quiz-ans">
-                <label for="quiz-op-0"></label>
-
-                <input type="radio" id="quiz-op-1" name="quiz-ans">
-                <label for="quiz-op-1"></label>
-
-                <input type="radio" id="quiz-op-2" name="quiz-ans">
-                <label for="quiz-op-2"></label>
-
-                <input type="radio" id="quiz-op-3" name="quiz-ans">
-                <label for="quiz-op-3"></label>
-
-                <div class="loader-holder">
-                    <div class="loader">
-                        
-                    </div>
-                </div>
-
+        <div class="quiz-holder-main">
+            <div class="quiz-holder">
+                <p id="quiz-to-ans">Loading Quiz...</p>
                 <div>
-                    <button onclick="nextQuestion()" id="next-btn">Next&nbsp;<i
-                            class="fa fa-chevron-right"></i></button>
+                    <input type="radio" id="quiz-op-0" name="quiz-ans">
+                    <label for="quiz-op-0"></label>
+
+                    <input type="radio" id="quiz-op-1" name="quiz-ans">
+                    <label for="quiz-op-1"></label>
+
+                    <input type="radio" id="quiz-op-2" name="quiz-ans">
+                    <label for="quiz-op-2"></label>
+
+                    <input type="radio" id="quiz-op-3" name="quiz-ans">
+                    <label for="quiz-op-3"></label>
+
+                    <div class="loader-holder">
+                        <div class="loader">
+
+                        </div>
+                    </div>
+
+                    <div>
+                        <button onclick="nextQuestion()" id="next-btn" disabled>Next&nbsp;<i
+                                class="fa fa-chevron-right"></i></button>
+                    </div>
+
                 </div>
 
             </div>
+            <div class="timer">
+                <i class="fa fa-clock"></i>
+                <p>00:00</p>
+            </div>
 
         </div>
+
 
         <div class="quiz-res">
             <h2>Your Results</h2>
@@ -124,10 +135,11 @@
             <div class="table-holder">
                 <table>
                     <tr>
-                        <th style="border-top-left-radius: 15px;">Serial No</th>
+                        <th style="border-top-left-radius: 15px;">Serial No.</th>
                         <th>Category</th>
                         <th>Questions Count</th>
                         <th>Difficulty</th>
+                        <th>Finish Time</th>
                         <th>Score</th>
                         <th>Grade</th>
                         <th style="border-top-right-radius: 15px;">Date</th>
@@ -137,8 +149,9 @@
 
             <div>
                 <button onclick="location.reload()"><i class="fa fa-repeat"></i>&nbsp;&nbsp;Try Again?</button>
-                <button onclick="clearScore()"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Clear Records</button>
+                <button onclick="clearScore()"><i class="fa fa-eraser"></i>&nbsp;&nbsp;Clear Records</button>
             </div>
+            <p>Status</p>
         </div>
 
     </div>
